@@ -1,0 +1,33 @@
+.homeSection{
+    height: 145px;   
+}
+
+.home-container{
+    position: relative;
+    top: -32px;
+}
+
+.product-category{
+    margin-left: 40px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.product-image{
+    height: 250px;
+}
+
+.product-body{
+    height: 180px;
+}
+
+#side-search{margin-top: 10px;}
+
+
+.offer-price{
+  text-decoration: line-through;
+}
+
+#clear-anchor{color:blue ; cursor: pointer;}
