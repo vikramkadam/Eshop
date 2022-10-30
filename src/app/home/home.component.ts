@@ -28,26 +28,46 @@ export class HomeComponent implements OnInit {
   }
 
 
-  filterProducts(category:any, min?: any , max? : any)
+  filterProducts(category:any, minno?: any , maxno?: any  )
   {
-    if(category !='all'){
 
-      if(min != null && max!= null)
-      {
 
-        this.filterProductsList = this.productList.filter(ele => ele.price >= min && ele.price <=max)
-        
-      }
-      else
-      {
-        this.filterProductsList = this.productList.filter(ele=> ele.category == category);
-      }
-     
-    }else{
+    let min:any = minno;
+    let max:any = maxno;
+    if(category !='all')
+    {       
+        if( (min != (undefined &&  "") ) && ( max != (undefined && "") ))
+        {
+          this.filterProductsList = this.productList.filter(ele => ele.price >= minno && ele.price <= maxno);
+        }else if(category=="price")
+        {
+          this.filterProductsList = this.productList;
+        }
+        else
+        {
+          this.filterProductsList = this.productList.filter( ele => ele.category == category);      
+        }
+                 
+    }
+    // else if(category =='price' &&  (min != undefined && '') && (max!= undefined && ''))
+    // {
+    //   this.filterProductsList = this.productList.filter(ele => ele.price >= min && ele.price <=max);
+    // }
+    else
+    {
       this.filterProductsList = this.productList;
     }
-     
+
+
   }
 
-
 }
+
+// if( category =='price')
+//       {
+//       if( (min != undefined && '') && (max!= undefined && ''))
+//       {
+
+//         this.filterProductsList = this.productList.filter(ele => ele.price >= min && ele.price <=max);
+
+//       }

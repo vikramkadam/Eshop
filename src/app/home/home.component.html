@@ -81,8 +81,9 @@
 </section>
 
 
-
+<div class="container-fluid">
 <div class="row">
+
   <div class="col-lg-2">
     <section id="side-search">
       <div class="card">
@@ -111,11 +112,12 @@
           <small>PRICE </small>
           <br>
           <hr>
-          <input style="width:60px" type="number" placeholder="Min" #min> &nbsp; to &nbsp; 
-          <input style="width:60px" type="number" placeholder="Max" #max>
+          
+          <input style="width:60px" type="number" placeholder="Min" #minno> &nbsp; to &nbsp; 
+          <input style="width:60px" type="number" placeholder="Max" #maxno>
 
           <hr>
-          <button (click)="filterProducts('price',min.value,max.value)">search</button>
+          <button class="btn btn-secondary" (click)="filterProducts('price',minno.value , maxno.value)">search</button>
         </div>
       </div>
     </section>
@@ -142,29 +144,5 @@
       </div>
     </section>
   </div>
-
 </div>
-
-
-<!-- <div class="row">
-  <div class="col-lg-2"></div>
-  <div class="col-lg-10">
-
-    <div class="row">
-      <div class="col-md-4" *ngFor=" let item of filterProductsList">
-
-        <div class="card" style="width: 18rem; margin: 5px;">
-          <img class="card-img-top" style="height: 200px ;width:200px;" [src]="item.image" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">₹{{item.price}} <span class="offer-price ms-2">{{item.price + 100}}</span> <span class="ms-2">2% off</span></p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-  </div>
-</div> -->
+</div>
