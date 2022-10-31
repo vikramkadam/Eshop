@@ -8,4 +8,22 @@
     .home-link{margin-left: 50px;}
     .search-btn{background-color: white; color:blue; width: 100px;}
     .btnsearch-icon{position:absolute; margin-left: 650px; margin-top: 10px; cursor: pointer;}
+    // position: fixed;
+    // width: 100%;
+    // top:1;
+}
+
+
+// .modal-dialog
+// {
+//     height: auto; width: 800px;
+// }
+
+.modal-dialog
+{
+    max-width: 900px;
+}
+
+.modal-body{
+    padding: 0px;    
 }

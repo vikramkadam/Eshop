@@ -121,14 +121,32 @@
         </div>
       </div>
     </section>
-  </div>
+  </div>   
 
   <div class="col-lg-10">
+
+    
+<ng-container *ngIf="filterProductsList.length<=0" >
+  <div class="offset-4"  style="height:300px ; width:400px; margin-top: 50px;">
+    <img src="https://cdn.dribbble.com/users/2698098/screenshots/5957957/media/1170a9145708a153f939471a46eec1c3.jpg?compress=1&resize=400x300&vertical=top">
+    <h3 style="color:red"><b>Sorry, no results found!</b></h3>
+    <small>Please check the spelling or try searching for something else !</small>
+  </div> 
+</ng-container> 
+  
+    
+         
+      
+ =
+
+
+
+
     <section id="product-section">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-4" *ngFor="let item of filterProductsList">
-            <div class="card m-2" style="width: 18rem;">
+            <div class="card m-2" style="width: 20rem;">
               <div class="card-header product-image">
                 <img [src]="item.image" class="card-img-top" alt="..." height="200px" width="150px">
               </div>
@@ -146,3 +164,4 @@
   </div>
 </div>
 </div>
+

@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="d-flex">
+
+        <div class="first-section">
+            <h4><u>SignUp</u></h4>
+            <!-- <hr class="border border-danger border-2 opacity-50">
+            <p>Sign up with your mobile number to get started</p> -->
+           
+            <img  id="flipcart-img" src="https://seeklogo.com/images/F/flipkart-logo-90D5271339-seeklogo.com.png">
+            <img >
+        </div>
+
+
+        <div class="sign-in-form">
+            <form [formGroup]="signUpForm">
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User name</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="userName" aria-describedby="emailHelp">                   
+                    <div *ngIf="signUpForm.controls['userName']?.invalid && (signUpForm.controls['userName']?.dirty || signUpForm.controls['userName']?.touched)">
+                        <small>User Name required</small>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Contact number</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="mobileNo" aria-describedby="emailHelp">                   
+                    <div *ngIf="signUpForm.controls['mobileNo']?.invalid && (signUpForm.controls['mobileNo']?.dirty || signUpForm.controls['mobileNo']?.touched)">
+                        <small *ngIf="signUpForm.controls['mobileNo']?.errors?.['required']">Mobile number required</small>
+                        <small *ngIf=" (signUpForm.controls['mobileNo']?.errors?.['minlength']) ||  (signUpForm.controls['mobileNo']?.errors?.['maxlength']) ">Mobile number must be of 10 digits.</small>
+                        <small *ngIf="signUpForm.controls['mobileNo']?.errors?.['pattern']">Invalid Mobile number.</small>
+                    </div>
+                </div>                
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                    <div  *ngIf="signUpForm.errors?.['passwordMismatch']" class="invalid-feedback d-block">
+                        Password and confirmPassword is not same.
+                      </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" formControlName="confirmPassword">
+                    <div *ngIf="signUpForm.errors?.['passwordMismatch']" class="invalid-feedback d-block">
+                       <small> Password and confirmPassword is not same.</small>
+                      </div>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button [disabled]="signUpForm.invalid" class="btn btn-primary" type="button">Create new Account</button>                  
+                  </div>
+
+                  <div class="d-grid gap-2 mt-4 text-center">                   
+                    <a  class="text-primary sign-up-link" (click)="redirectToSignIn()"> Existing User? Login</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
