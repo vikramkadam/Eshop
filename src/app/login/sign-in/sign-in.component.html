@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="d-flex">
+        <div class="first-section">
+            <h4><u> LogIn</u></h4>
+            <!-- <hr class="border border-danger border-2 opacity-50"> -->
+            <!-- <p >Get access to your Orders, Wishlist and Recommendations</p> -->
+            <br>
+            <img  id="flipcart-img" src="https://seeklogo.com/images/F/flipkart-logo-90D5271339-seeklogo.com.png">
+            <img >
+        </div>
+
+
+        <div class="sign-in-form">
+            <form [formGroup]="signIn">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Enter Email/Mobile number</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="userName" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">    We'll never share your email with anyone else.    </div>
+                    <div *ngIf="signIn.controls['userName']?.invalid && (signIn.controls['userName']?.dirty || signIn.controls['userName']?.touched)">
+                        <small>Email/Mobile number required</small>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+                    <div *ngIf="signIn.controls['password']?.invalid && (signIn.controls['password']?.dirty || signIn.controls['password']?.touched)">
+                        <small>password required</small>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button [disabled]="signIn.invalid" class="btn btn-primary" type="button">Login</button>                  
+                  </div>
+
+                  <div class="d-grid gap-2 mt-4 text-center">
+                    <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    <a  class="text-primary sign-up-link" (click)="redirectToSignIn()"> New To Eshop? create an account</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

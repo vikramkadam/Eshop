@@ -11,9 +11,9 @@
 
           <li>
             <form class="d-flex search-box" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search for products, brands and more" aria-label="Search">
-                <i  (click)="dfjsdfj()" class="bi bi-search btnsearch-icon"></i>
-                <button class="btn btn-primary search-btn" type="submit">Login</button>
+                <input class="form-control me-2" #search (keyup)="searhByEnteredText(search.value)" type="text" placeholder="Search for products, brands and more" aria-label="Search">
+                <i class="bi bi-search btnsearch-icon"></i>
+                <button class="btn btn-primary search-btn" type="submit"data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
               </form>
           </li>
 
@@ -42,3 +42,16 @@
       </div>
     </div>
   </nav>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">     
+      <div class="modal-body">
+        <app-sign-in *ngIf="IsActive =='sign-In'" (actionEmit)="emittedAction($event)"></app-sign-in>
+        <app-sign-up *ngIf="IsActive =='sign-Up'" (actionEmit)="emittedAction($event)"></app-sign-up>
+      </div>      
+    </div>
+  </div>
+</div>
