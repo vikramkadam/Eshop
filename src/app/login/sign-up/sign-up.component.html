@@ -5,6 +5,7 @@
             <h4><u>SignUp</u></h4>
             <!-- <hr class="border border-danger border-2 opacity-50">
             <p>Sign up with your mobile number to get started</p> -->
+            <br>
            
             <img  id="flipcart-img" src="https://seeklogo.com/images/F/flipkart-logo-90D5271339-seeklogo.com.png">
             <img >
@@ -49,7 +50,7 @@
                 </div>
 
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button [disabled]="signUpForm.invalid" class="btn btn-primary" type="button">Create new Account</button>                  
+                    <button [disabled]="signUpForm.invalid" (click)="signUp()" class="btn btn-primary" type="button">Create new Account</button>                  
                   </div>
 
                   <div class="d-grid gap-2 mt-4 text-center">                   
