@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { Product } from '../Models/product';
 import { CommonLogicService } from '../services/common-logic.service';
-
+import { ToastrModule } from 'ngx-toastr';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
